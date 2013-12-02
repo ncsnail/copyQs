@@ -1,0 +1,35 @@
+/* header */
+#header {
+	/*border-bottom: 2px solid #658A16; */
+	padding-bottom:32px;
+}
+
+#header h3 a {
+	color: #658A16;
+	text-decoration: none
+}
+
+#header h3 small {color: #BACE87;}
+#header h3 span a:hover {color: #ffffff;}
+
+/* footer */
+#footer {
+	margin-top: 15px;
+	padding: 15px 0px 0px 0px;
+	font-size: 95%;
+	text-align: center;
+	border-top: 2px solid #658A16;
+}
+
+#footer a {color: #999;}
+
+#content{
+	
+	margin:20px auto 20px auto;
+	
+}
+
+#menu{
+	margin-bottom:20px;
+}
+
