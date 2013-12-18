@@ -24,7 +24,7 @@ public class RegisterController {
 	UserService userService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String toRegister(){
+	public String toRegisterForm(){
 		return "user/register";
 	}
 	

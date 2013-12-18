@@ -15,7 +15,7 @@ public class Task extends IdEntity {
 	private String title;
 	private String description;
 	@ManyToOne
-	@JoinColumn(name = "user_id")
+	@JoinColumn(name = "user_id",referencedColumnName="id")
 	private User user;
 
 	

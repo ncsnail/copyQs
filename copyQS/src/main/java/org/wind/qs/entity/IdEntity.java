@@ -9,13 +9,13 @@ import javax.persistence.MappedSuperclass;
 public abstract class IdEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //auto increment,only for mysql,sqlserver
-	private long id;
+	private Long id;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

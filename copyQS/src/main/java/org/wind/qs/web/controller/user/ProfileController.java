@@ -25,7 +25,7 @@ public class ProfileController {
 	
 	//
 	@RequestMapping(method = RequestMethod.GET)
-	public String getProfile(Model model){
+	public String toProfile(Model model){
 		
 		try{
 			ShiroUser suser = (ShiroUser)SecurityUtils.getSubject().getPrincipal();

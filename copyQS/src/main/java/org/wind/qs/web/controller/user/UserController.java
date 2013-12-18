@@ -38,7 +38,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="update/{id}")
-	public String get(@PathVariable("id") long id,Model model){
+	public String get(@PathVariable("id") Long id,Model model){
 		try{
 			User user = userService.getUser(id);
 			model.addAttribute("user", user);
@@ -68,7 +68,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="delete/{id}")
-	public String delete(@PathVariable("id") long id, RedirectAttributes rdAttr ){	
+	public String delete(@PathVariable("id") Long id, RedirectAttributes rdAttr ){	
 		try{
 			userService.deleteUser(id);
 			rdAttr.addFlashAttribute("sucMsg", "删除成功");

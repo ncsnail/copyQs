@@ -6,12 +6,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springside.modules.utils.DateProvider;
 import org.wind.qs.dao.UserDao;
 import org.wind.qs.entity.User;
 import org.wind.qs.service.ServiceException;
 
 @Service("userService")
+@Transactional
 public class UserService{
 	
 	private static Logger log = LoggerFactory.getLogger(UserService.class);
@@ -25,7 +27,7 @@ public class UserService{
 		return userDao.findByLoginName(username);
 	}
 	
-	public User getUser(long userId){
+	public User getUser(Long userId){
 		return userDao.findOne(userId);
 	}
 	
@@ -46,7 +48,7 @@ public class UserService{
 		userDao.save(user);
 	}
 	
-	public void deleteUser(long id){
+	public void deleteUser(Long id){
 		if(isSuperAdmin(id)){
 			log.warn("operator is trying to delete the super administrator");
 			throw new ServiceException("can not delete the super administrator!");
@@ -55,7 +57,7 @@ public class UserService{
 	}
 	
 	//like a agreement to mark super administrator
-	private boolean isSuperAdmin(long id){
+	private boolean isSuperAdmin(Long id){
 		return (-999 == id);
 	}
 	
