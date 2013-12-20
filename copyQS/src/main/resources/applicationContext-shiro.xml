@@ -26,6 +26,7 @@
 				/logout = logout
 				/static/** = anon
 				/register/** = anon
+				/user/** = roles[admin]
 				/** = user
 			</value>
 		</property>

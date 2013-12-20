@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springside.modules.utils.DateProvider;
+import org.wind.qs.dao.TaskDao;
 import org.wind.qs.dao.UserDao;
 import org.wind.qs.entity.User;
 import org.wind.qs.service.ServiceException;
@@ -20,6 +21,10 @@ public class UserService{
 	
 	@Autowired
 	UserDao userDao;
+	
+	@Autowired
+	TaskDao taskDao;
+	
 	private DateProvider dateProvider = DateProvider.DEFAULT;
 	
 	public User findByLoginName(String username){
@@ -53,7 +58,8 @@ public class UserService{
 			log.warn("operator is trying to delete the super administrator");
 			throw new ServiceException("can not delete the super administrator!");
 		}
-		//userDao.delete(id);
+		userDao.delete(id);
+		taskDao.deleteByUserId(id);
 	}
 	
 	//like a agreement to mark super administrator
